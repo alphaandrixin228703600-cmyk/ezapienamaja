@@ -9,42 +9,39 @@
             --neon-blue: #00f2ff;
             --uranium-green: #ccff00;
             --warning-yellow: #ffea00;
+            --deep-space: #0a0a0c;
         }
 
         body {
-            background-color: #0a0a0c;
+            background-color: var(--deep-space);
             color: white;
             font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
+        /* Satelīta bilde stūrī */
         .top-right-image {
-    position: absolute; /* Novieto bildi attiecībā pret lapas augšpusi */
-    top: 20px;          /* Attālums no augšas */
-    right: 20px;         /* Attālums no labās malas */
-    width: 300px;        /* Palielināts platums (bija mazāks) */
-    height: auto;        /* Saglabā proporcijas */
-    border: 2px solid #00f2ff;
-    box-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
-    border-radius: 10px;
-    z-index: 9999;       /* Pārliecinās, ka bilde ir visiem elementiem pa virsu */
-}
-
-/* Ja lieto telefonu, bilde smuki nostāsies vidū, lai netraucētu tekstam */
-@media (max-width: 600px) {
-    .top-right-image {
-        position: static;
-        display: block;
-        margin: 20px auto;
-        width: 90%;
-    }
-
-
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 250px;
+            height: auto;
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+            border-radius: 10px;
+            z-index: 9999;
         }
 
-        /* Dzeltenais mirgojošais teksts */
+        header {
+            background: linear-gradient(180deg, #1a1a2e 0%, var(--deep-space) 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        /* Mirgojošais teksts */
         .satellite-status {
             color: var(--warning-yellow);
             font-weight: bold;
@@ -62,6 +59,150 @@
 
         .container {
             max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* LABOTĀ BILDES SADAĻA */
+        .lab-image-container {
+            width: 100%;
+            max-width: 800px; /* Ierobežots platums, lai nav par lielu */
+            margin: 40px auto;
+            border: 3px solid var(--neon-blue);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.3);
+            line-height: 0;
+        }
+
+        .lab-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Grid un kartītes */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: #16213e;
+            padding: 30px;
+            border-radius: 18px;
+            border: 1px solid #1a1a3a;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .blue-diamond-icon {
+            font-size: 50px;
+            display: inline-block;
+            animation: pulseBlue 3s infinite ease-in-out;
+        }
+
+        @keyframes pulseBlue {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px var(--neon-blue)); }
+            50% { transform: scale(1.1); filter: drop-shadow(0 0 20px var(--neon-blue)); }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--neon-blue);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px;
+            color: #666;
+            border-top: 1px solid #333;
+            font-size: 0.9em;
+        }
+
+        /* Mobilā versija */
+        @media (max-width: 700px) {
+            .top-right-image {
+                position: relative;
+                display: block;
+                margin: 0 auto 20px;
+                right: 0;
+                width: 90%;
+            }
+            .lab-image-container {
+                max-width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <img src="Screenshot_20260204-101854.png" alt="Quazarr Satellite Uplink" class="top-right-image">
+
+    <header>
+        <div class="satellite-status">🛰️ SATELLITE QUAZARR UPLINKS ONLINE AND CONNECTED</div>
+        <h1 style="font-size: 3em; margin: 10px 0;">ežasēklasmāja.lv</h1>
+    </header>
+
+    <div class="container">
+        
+        <section style="text-align: center; margin-bottom: 40px;">
+            <h2 style="color: var(--neon-blue); text-transform: uppercase;">Dārgumu Kristālu Laboratorija</h2>
+            <p>Utilizing high-density star energy to upgrade hedgehog vital systems.</p>
+            
+            <div class="lab-image-container">
+                <img src="1775937312921.png" alt="Dārgumu Kristālu Laboratorija">
+            </div>
+            <p style="font-style: italic; color: var(--uranium-green);">BIO-VISION ENERGY STATUS: OPTIMAL</p>
+        </section>
+
+        <div class="grid">
+            <div class="card">
+                <div class="blue-diamond-icon">💎🔹</div>
+                <h3 style="color: var(--neon-blue);">Vitamīna A Kristāls</h3>
+                <p>Pulsē ar tīru bio-enerģiju. Palīdz ežiem redzēt cauri visbiezākajai tumsai.</p>
+            </div>
+
+            <div class="card">
+                <div style="font-size: 50px;">💎🧪</div>
+                <h3 style="color: #fb00ff;">Kaulu Epoksija</h3>
+                <p>Sarežģītu kaulu un locītavu reģenerācijas centrs. Dziedē pat vissmagākos lūzumus.</p>
+                <a href="#" class="btn" style="background: #fb00ff; color: white;">ORDER REGEN</a>
+            </div>
+
+            <div class="card">
+                <div style="font-size: 50px;">🌻</div>
+                <h3 style="color: var(--uranium-green);">U-235 Sēklas</h3>
+                <p>Standarta cena, neparasta jauda. Augstākā enerģētiskā vērtība ežu uzturam.</p>
+                <div style="font-size: 1.5em; font-weight: bold; color: var(--uranium-green);">€1.50</div>
+                <a href="#" class="btn">BUY NOW</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Powered by the Quazarr Satellite & White Draft Sun Engineering.</p>
+        <p>© 2026 ElRao Bio-Industrial Complexes. All Rights Reserved.</p>
+        <p style="color: #ff4444;">Warning: Avoid standing near magnets if bone-humming exceeds 60dB.</p>
+    </footer>
+
+</body>
+</html>
             margin: auto;
             padding: 40px 20px;
         }
