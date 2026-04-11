@@ -401,7 +401,7 @@
             font-size: 0.8em;
             font-weight: bold;
         }
-    </style>
+    
 
 
     <div class="container">
@@ -434,12 +434,17 @@
 
 
   
-    </style>
+    
 </head>
 <body>
 
     <img src="Screenshot_20260204-101854.png" alt="Quazarr Satellite Uplink" class="top-right-image">
 
+        @keyframes yellowPulse {
+            0% { opacity: 1; text-shadow: 0 0 5px var(--warning-yellow); }
+            50% { opacity: 0.4; text-shadow: 0 0 20px var(--warning-yellow); }
+            100% { opacity: 1; text-shadow: 0 0 5px var(--warning-yellow); }
+    }
     <h1>Satellite Uplink Established</h1>
     <p>Welcome to ežasēklasmāja.lv</p>
     <p>Connection Status: Active...</p>
