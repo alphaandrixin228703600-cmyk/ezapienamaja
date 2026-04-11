@@ -1,39 +1,175 @@
- <!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="lv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ežasēklasmāja.lv | Quazarr Satellite Uplink</title>
-    <style><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ežasēklasmāja.lv | Quazarr Satellite Uplink</title>
-    
     <style>
-        
-        body 
-            background-color: #000;
+        :root {
+            --neon-blue: #00f2ff;
+            --uranium-green: #ccff00;
+            --warning-yellow: #ffea00;
+        }
+
+        body {
+            background-color: #0a0a0c;
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-        
+            padding: 0;
+            overflow-x: hidden;
+        }
 
-        
-        .top-right-image 
+        /* Labotā bilde augšējā stūrī */
+        .top-right-image {
             position: absolute;
-          top: 20px;          
-            right: 20px;       
-            width: 300px;        
+            top: 20px;
+            right: 20px;
+            width: 150px; /* Samazināts izmērs */
             height: auto;
-            border: 1px solid #333; /*
-            box-shadow: 0 0 15px rgba(0, 150, 255, 0.5);
-        
+            border: 2px solid var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
+            border-radius: 8px;
+            z-index: 100;
+        }
 
-        
-        @media (max-width: 600px) 
+        header {
+            background: linear-gradient(90deg, #1a1a2e, #16213e);
+            padding: 30px;
+            text-align: center;
+            border-bottom: 2px solid var(--neon-blue);
+        }
+
+        /* Dzeltenais mirgojošais teksts */
+        .satellite-status {
+            color: var(--warning-yellow);
+            font-weight: bold;
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: yellowPulse 1.5s infinite;
+        }
+
+        @keyframes yellowPulse {
+            0% { opacity: 1; text-shadow: 0 0 5px var(--warning-yellow); }
+            50% { opacity: 0.4; text-shadow: 0 0 20px var(--warning-yellow); }
+            100% { opacity: 1; text-shadow: 0 0 5px var(--warning-yellow); }
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: #16213e;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #1a1a3a;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+        }
+
+        .blue-diamond-icon {
+            font-size: 50px;
+            animation: blueGlow 3s infinite ease-in-out;
+        }
+
+        @keyframes blueGlow {
+            0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px var(--neon-blue)); }
+            50% { transform: scale(1.05); filter: drop-shadow(0 0 15px var(--neon-blue)); }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--neon-blue);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            border-top: 1px solid #333;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            .top-right-image {
+                position: relative;
+                display: block;
+                margin: 10px auto;
+                right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="satellite-status">🛰️ SATELLITE QUAZARR UPLINKS ONLINE AND CONNECTED</div>
+    <h1>ežasēklasmāja.lv</h1>
+</header>
+
+<img src="Screenshot_20260204-101854.png" alt="Quazarr Satellite Uplink" class="top-right-image">
+
+<div class="container">
+    <section style="text-align: center; margin-bottom: 50px;">
+        <h2>Zilo Dimantu Laboratorija</h2>
+        <p>Utilizing high-density star energy to upgrade hedgehog vital systems.</p>
+    </section>
+
+    <div class="grid">
+        <div class="card">
+            <div class="blue-diamond-icon">💎🔹</div>
+            <h3 style="color: var(--neon-blue);">Vitamīna A Kristāls</h3>
+            <p>Pulsē ar tīru bio-enerģiju. Palīdz ežiem redzēt cauri visbiezākajai tumsai.</p>
+            <span style="color: var(--uranium-green); font-size: 0.8em;">[STATUS: ACTIVE]</span>
+        </div>
+
+        <div class="card">
+            <div style="font-size: 50px;">💎🧪</div>
+            <h3 style="color: #fb00ff;">Kaulu Epoksija</h3>
+            <p>Sarežģītu kaulu un locītavu reģenerācijas centrs. Dziedē pat vissmagākos lūzumus.</p>
+            <a href="#" class="btn" style="background: #fb00ff; color: white;">ORDER REGEN</a>
+        </div>
+
+        <div class="card">
+            <div style="font-size: 50px;">🌻</div>
+            <h3 style="color: var(--uranium-green);">U-235 Sēklas</h3>
+            <p>Standarta cena, neparasta jauda. Augstākā enerģētiskā vērtība ežu uzturam.</p>
+            <p style="font-weight: bold; color: var(--uranium-green);">€1.50 / pack</p>
+            <a href="#" class="btn">BUY NOW</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>Powered by the Quazarr Satellite & White Draft Sun Engineering.</p>
+    <p>© 2026 ElRao Bio-Industrial Complexes. All Rights Reserved.</p>
+    <p style="color: #ff4444;">Warning: Avoid standing near magnets if bone-humming exceeds 60dB.</p>
+</footer>
+
+</body>
+</html>
             .top-right-image 
                 position: static;
                 display: block;
