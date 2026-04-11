@@ -40,7 +40,74 @@
                 margin: 0 auto 20px auto;
                 width: 100%;
             
+              
+        @keyframes pulseBlue {
+            0% { transform: scale(1); filter: drop-shadow(0 0 5px #00d4ff); }
+            50% { transform: scale(1.1); filter: drop-shadow(0 0 25px #00d4ff); }
+            100% { transform: scale(1); filter: drop-shadow(0 0 5px #00d4ff); }
+        }
+
+        .blue-diamond-icon {
+            font-size: 50px;
+            display: inline-block;
+            animation: pulseBlue 3s infinite ease-in-out;
+            cursor: pointer;
+        }
+
+        .card {
+            background: #16213e;
+            padding: 25px;
+            border-radius: 18px;
+            border: 1px solid #1a1a3a;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
+        }
+
+        h3 { color: #00d4ff; margin-bottom: 10px; }
+        .vit-a-badge {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 2px 8px;
+            border-radius: 5px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: white;">Zilo <span style="color: #00d4ff;">Dimantu</span> Laboratorija</h1>
         
+        <div style="margin-top: 40px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            
+            <!-- Galvenais Zilais Dimants -->
+            <div class="card" style="max-width: 350px;">
+                <div class="blue-diamond-icon">💎🔹</div>
+                <h3>Vitamīna A Kristāls</h3>
+                <p>Šis dimants pulsē ar tīru bio-enerģiju. Tas palīdz ežiem redzēt cauri visbiezākajai tumsai.</p>
+                <span class="vit-a-badge">AKTĪVS REŽĪMS</span>
+            </div>
+
+            <!-- Epoksijas dimants salīdzinājumam -->
+            <div class="card" style="max-width: 350px; opacity: 0.9;">
+                <div style="font-size: 50px;">💎🧪</div>
+                <h3 style="color: #fb00ff;">Kaulu Epoksija</h3>
+                <p>Sarežģītu kaulu un locītavu reģenerācijas centrs. Dziedē pat vissmagākos lūzumus.</p>
+            </div>
+
+        </div>
+
+        <p style="margin-top: 50px; font-style: italic;">Piezīme: Zilā gaisma ežu acīm ir pilnīgi nekaitīga!</p>
+    </div>
+</body>
+</html>
+
+</body>
+</html>
+  
     </style>
 </head>
 <body>
