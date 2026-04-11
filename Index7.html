@@ -138,6 +138,30 @@
 <div class="container">
     <section style="text-align: center; margin-bottom: 50px;">
         <h2>Zilo Dimantu Laboratorija</h2>
+        .lab-image-wrapper {
+    width: 100%;
+    max-width: 800px; /* Šeit vari nomainīt uz 600px, ja gribi vēl mazāku */
+    margin: 20px auto;
+    border: 2px solid #00f2ff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.4);
+    overflow: hidden;
+    line-height: 0; /* Noņem lieko atstarpi zem bildes */
+}
+
+.lab-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Pielāgojums telefonam */
+@media (max-width: 800px) {
+    .lab-image-wrapper {
+        max-width: 95%; /* Telefonā aizņem gandrīz visu ekrānu */
+    }
+}
+
         <div class="responsive-lab-container">
     <<div class="responsive-lab-container">
     <img src="1775937312921.png" alt="Dārgumu Kristālu Laboratorija">
