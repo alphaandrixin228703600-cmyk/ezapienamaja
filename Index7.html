@@ -20,24 +20,28 @@
             overflow-x: hidden;
         }
 
-        /* Labotā bilde augšējā stūrī */
         .top-right-image {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 150px; /* Samazināts izmērs */
-            height: auto;
-            border: 2px solid var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 242, 255, 0.3);
-            border-radius: 8px;
-            z-index: 100;
-        }
+    position: absolute; /* Novieto bildi attiecībā pret lapas augšpusi */
+    top: 20px;          /* Attālums no augšas */
+    right: 20px;         /* Attālums no labās malas */
+    width: 300px;        /* Palielināts platums (bija mazāks) */
+    height: auto;        /* Saglabā proporcijas */
+    border: 2px solid #00f2ff;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.5);
+    border-radius: 10px;
+    z-index: 9999;       /* Pārliecinās, ka bilde ir visiem elementiem pa virsu */
+}
 
-        header {
-            background: linear-gradient(90deg, #1a1a2e, #16213e);
-            padding: 30px;
-            text-align: center;
-            border-bottom: 2px solid var(--neon-blue);
+/* Ja lieto telefonu, bilde smuki nostāsies vidū, lai netraucētu tekstam */
+@media (max-width: 600px) {
+    .top-right-image {
+        position: static;
+        display: block;
+        margin: 20px auto;
+        width: 90%;
+    }
+
+
         }
 
         /* Dzeltenais mirgojošais teksts */
